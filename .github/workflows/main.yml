@@ -24,6 +24,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Docker test
-        uses: ./.github/workflows
+        uses: ./.github/workflows/e2e_action
         with:
           container-args: Test
