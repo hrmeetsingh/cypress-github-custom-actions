@@ -18,6 +18,7 @@ on:
 
 jobs:
   cypress-run:
+    if: github.actor == 'hrmeetsingh'
     runs-on: ubuntu-20.04
     name: E2E on Chrome
     steps:
