@@ -17,12 +17,17 @@ on:
         type: string
 
 jobs:
-  log-the-inputs:
+  cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "Log level: $LEVEL"
-          echo "Tags: $TAGS"
-        env:
-          LEVEL: ${{ github.event.inputs.logLevel }}
-          TAGS: ${{ github.event.inputs.tags }}
+      env:
+        LEVEL: ${{ github.event.inputs.logLevel }}
+        TAGS: ${{ github.event.inputs.tags }}
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
