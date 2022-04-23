@@ -1,0 +1,27 @@
+{
+  "name": "cypress-github-custom-actions",
+  "version": "1.0.0",
+  "description": "Running sypress tests with custom github actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrmeetsingh/cypress-github-custom-actions.git"
+  },
+  "keywords": [
+    "cypress",
+    "github",
+    "actions"
+  ],
+  "author": "Harmeet Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hrmeetsingh/cypress-github-custom-actions/issues"
+  },
+  "homepage": "https://github.com/hrmeetsingh/cypress-github-custom-actions#readme",
+  "devDependencies": {
+    "cypress": "^9.5.4"
+  }
+}
