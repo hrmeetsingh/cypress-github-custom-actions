@@ -1,0 +1,15 @@
+name: 'Docker Cypress'
+description: 'Cypress action for docker test execution'
+inputs:
+  container-args:
+    description: 'Argument to be passed to container'
+    required: false
+    default: 'Test'
+outputs:
+  container-out-flags:
+    description: 'Output flags if any'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.container-args }}

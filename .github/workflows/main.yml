@@ -17,11 +17,13 @@ on:
         type: string
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-20.04
-    name: E2E on Chrome running on a branch
+  cypress-run-docker:
+    runs-on: ubuntu-latest
+    name: E2E on Chrome running on a docker container
     steps:
-      - uses: actions/checkout@v2
-      - uses: cypress-io/github-action@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Docker test
+        uses: ./.github/workflows
         with:
-          browser: chrome
+          container-args: Test
