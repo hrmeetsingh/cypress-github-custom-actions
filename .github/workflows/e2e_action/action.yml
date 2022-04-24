@@ -4,7 +4,7 @@ inputs:
   container-args:
     description: 'Argument to be passed to container'
     required: false
-    default: 'Test'
+    default: 'chrome'
 outputs:
   container-out-flags:
     description: 'Output flags if any'

@@ -2,29 +2,24 @@ name: run-cypress-tests
 on: 
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'     
+      browser:
+        description: Browser     
         required: true
-        default: 'warning' 
+        default: chrome 
         type: choice
         options:
-        - info
-        - warning
-        - debug 
-      tags:
-        description: 'Test scenario tags'
-        required: false 
-        type: string
+        - chrome
+        - firefox
 
 jobs:
   cypress-run-docker:
     if: github.actor == 'hrmeetsingh'
     runs-on: ubuntu-latest
-    name: E2E on Chrome running on a docker container
+    name: E2E on ${{ github.event.inputs.browser }} running on a docker container
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Docker test
         uses: ./.github/workflows/e2e_action
         with:
-          container-args: Test
+          container-args: ${{ github.event.inputs.browser }}
