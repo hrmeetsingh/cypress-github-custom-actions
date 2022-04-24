@@ -8,4 +8,4 @@ Example of test used from [Page Dom testing - Cypress recipes](https://github.co
 
 This repo has a manually triggered workflow
 - Run on "main" branch for cypress provided github action
-- Run on "docker-branch" branch for using cypress included image container
+- Run on "docker-branch" branch for using cypress included image container and custom action
