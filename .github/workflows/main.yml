@@ -2,19 +2,14 @@ name: run-cypress-tests
 on: 
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'     
+      browser:
+        description: Browser     
         required: true
-        default: 'warning' 
+        default: chrome 
         type: choice
         options:
-        - info
-        - warning
-        - debug 
-      tags:
-        description: 'Test scenario tags'
-        required: false 
-        type: string
+        - chrome
+        - firefox
 
 jobs:
   cypress-run:
@@ -25,4 +20,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: cypress-io/github-action@v2
         with:
-          browser: chrome
+          browser: ${{ github.event.inputs.browser }}
