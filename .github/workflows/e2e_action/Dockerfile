@@ -36,5 +36,4 @@ RUN echo "whoami: $(whoami)" \
     "chrome:          $(google-chrome --version || true) \n" \
     "firefox:         $(firefox --version || true) \n"
 
-ENTRYPOINT ["cypress", "run", "--browser "]
-CMD ["chrome"]
+ENTRYPOINT ["cypress", "run"]
