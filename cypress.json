@@ -3,5 +3,14 @@
   "supportFile": false,
   "pluginsFile": false,
   "baseUrl": "https://www.cypress.io/",
+  "reporter": "cypress-mochawesome-reporter",
+  "reporterOptions": {
+    "reportDir": "cypress/reports",
+    "charts": true,
+    "reportPageTitle": "Test reports",
+    "embeddedScreenshots": true,
+    "inlineAssets": true,
+    "html": true
+  },
   "video": false
 }

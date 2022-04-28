@@ -17,7 +17,14 @@ jobs:
     runs-on: ubuntu-20.04
     name: E2E on ${{ github.event.inputs.browser }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: cypress-io/github-action@v2
+      - name: Run tests
+        run: npm test:report
+      - name: Merge reports
+        run: npm run report:generate-html
+      - name: Publish reports
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          browser: ${{ github.event.inputs.browser }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
