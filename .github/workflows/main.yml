@@ -18,7 +18,7 @@ jobs:
     name: E2E on ${{ github.event.inputs.browser }}
     steps:
       - name: Run tests
-        run: npm test:report
+        run: npm run test:report
       - name: Merge reports
         run: npm run report:generate-html
       - name: Publish reports
