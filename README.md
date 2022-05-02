@@ -11,3 +11,4 @@ Example of test used from [Page Dom testing - Cypress recipes](https://github.co
 This repo has a manually triggered workflow
 - Run on "main" branch for cypress provided github action
 - Run on "docker-branch" branch for using cypress included image container and custom action
+- Run on "run-and-report" branch for using mochawesome reports published on [GH Pages Report](https://hrmeetsingh.github.io/cypress-github-custom-actions/)
